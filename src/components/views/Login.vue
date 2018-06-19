@@ -1,9 +1,22 @@
 <script>
     import Vue from "vue";
     import Component from "vue-class-component";
+    import {isNil, isEmpty} from "lodash";
 
     @Component({})
     export default class Login extends Vue {
+
+        username = null;
+
+        get userLogin() {
+            return this.$store.state.userLogin;
+        }
+
+        login(){
+            if (!isNil(this.username) && !isEmpty(this.username) && this.username.length > 1) {
+                this.$store.commit("updateUserLogin", this.username);
+            }
+        }
     }
 </script>
 
@@ -17,11 +30,12 @@
         <div class="middle">
             <div class="middle_content">
                 <p>Bonjour</p>
-                <input type="text" placeholder="...tape ton nom ici">
+                <b>{{ userLogin }}</b>
+                <input type="text" placeholder="...tape ton nom ici" v-model="username">
             </div>
         </div>
         <div class="left-down"></div>
-        <button class="button">
+        <button class="button" @click="login">
             <p>Log in</p>
         </button>
     </div>

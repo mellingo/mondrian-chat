@@ -20,7 +20,7 @@
         <div class="right-up"></div>
         <div class="left-middle"></div>
         <div class="middle">
-            <login/>
+            <router-view  name="main"></router-view>
         </div>
         <div class="right-middle"></div>
         <div class="left-down"></div>

@@ -1,18 +1,25 @@
 import io from "socket.io-client";
+const socket = io("https://socket-io-chat.now.sh/");
+import store from "./../store/store";
 
-const socket = io({api: "https://socket-io-chat.now.sh/"});
+socket.on('connect', () => {
+    console.log('connect');
+});
 
-socket.on("add user", () => {
+socket.on("user joined", () => {
     console.log("New user");
 });
 
-socket.on("new message", () => {
-   console.log("New Message")
+socket.on("new message", (value) => {
+    console.log(value);
+    store.commit("updateMessages", value);
 });
 
+
 export default {
+    socket: socket,
     connect: (username) => {
-        socket.emit('user connected', username);
+        socket.emit('user joined', username);
     },
     sendMessage: (message) => {
         socket.emit('new message', message);

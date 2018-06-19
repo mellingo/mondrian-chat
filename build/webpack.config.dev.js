@@ -11,7 +11,8 @@ module.exports = {
         hot: true,
         watchOptions: {
             poll: true
-        }
+        },
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -40,7 +41,11 @@ module.exports = {
                     },
                     'sass-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(jpg|png|svg|woff2?)$/,
+                loader: "file-loader"
+            },
         ]
     },
     resolve: {
