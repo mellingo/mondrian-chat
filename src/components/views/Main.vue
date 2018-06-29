@@ -7,16 +7,16 @@
     export default class Main extends Vue {
 
         ListUserLogo = ListUserLogo;
+        width = null;
 
-        get width(){
-            console.log("hello");
-            return this.$refs.peopleBlock? window.getComputedStyle(this.$refs.peopleBlock, null).width:null;
+        setWidth(){
+            this.width = this.$refs.peopleBlock? window.getComputedStyle(this.$refs.peopleBlock, null).width:null;
         }
 
         mounted(){
             this.$nextTick(() => {
-                console.log(this.$refs.peopleBlock);
-                console.log(window.getComputedStyle(this.$refs.peopleBlock, null).width);
+                this.setWidth();
+                window.addEventListener('resize', this.setWidth);
             })
         }
 
@@ -24,11 +24,13 @@
             return this.$store.state.userLogin;
         }
 
+        beforeDestroy() {
+            window.removeEventListener('resize', this.setWidth)
+        }
+
         open = false;
 
         toggleOpen(){
-            console.log(this.$refs.peopleBlock);
-            console.log(this.$children);
             if (this.login) {
                 this.open = !this.open;
             }
