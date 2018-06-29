@@ -4,6 +4,7 @@ const Autoprefixer = require("autoprefixer");
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
 
 module.exports = {
     mode: 'development',
@@ -12,7 +13,7 @@ module.exports = {
         watchOptions: {
             poll: true
         },
-        historyApiFallback: true
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -50,7 +51,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.esm.js'
+            "vue$": 'vue/dist/vue.esm.js',
+            "theme": path.resolve(__dirname, "../src/theme"),
+            "static": path.resolve(__dirname, "../src/static")
         }
     },
     plugins: [

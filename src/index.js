@@ -7,6 +7,8 @@ store.subscribe((mutation) => {
     if (mutation.type === "updateUserLogin") {
         socket.connect(mutation.payload);
         router.push('app');
+    } else if (mutation.type === "messageSend") {
+        socket.sendMessage(mutation.payload);
     }
 });
 

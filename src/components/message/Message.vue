@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <div class="message" :style="{backgroundColor: bgColor, color: (bgColor === 'blue' || bgColor === 'red')? 'white':'black'}">
+    <div class="message" :style="{color: (bgColor === 'blue' || bgColor === 'red')? 'white':'black'}">
         {{ message.username }} dit:
         <span>{{ message.message }}</span>
     </div>
@@ -20,7 +20,8 @@
 <style lang="scss" scoped>
     .message {
         padding: 5px;
-        border: 5px solid black;
+        border: 2px solid black;
+        border-left: none;
         border-collapse: collapse;
         max-width: 100%;
     }

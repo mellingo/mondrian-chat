@@ -1,28 +1,61 @@
 <script>
     import Vue from "vue";
     import Component from "vue-class-component";
-    import Login from "./Login.vue";
+    import ListUserLogo from "static/list_user.svg";
 
-    @Component({
-        components: {
-            "login": Login
-        }
-    })
+    @Component({})
     export default class Main extends Vue {
 
+        ListUserLogo = ListUserLogo;
+
+        get width(){
+            console.log("hello");
+            return this.$refs.peopleBlock? window.getComputedStyle(this.$refs.peopleBlock, null).width:null;
+        }
+
+        mounted(){
+            this.$nextTick(() => {
+                console.log(this.$refs.peopleBlock);
+                console.log(window.getComputedStyle(this.$refs.peopleBlock, null).width);
+            })
+        }
+
+        get login(){
+            return this.$store.state.userLogin;
+        }
+
+        open = false;
+
+        toggleOpen(){
+            console.log(this.$refs.peopleBlock);
+            console.log(this.$children);
+            if (this.login) {
+                this.open = !this.open;
+            }
+        }
     }
 </script>
 
 <template>
     <main>
-        <div class="left-up"></div>
+        <div class="left-up" :class="{'blue': !login}"></div>
         <div class="middle-up"></div>
         <div class="right-up"></div>
-        <div class="left-middle"></div>
         <div class="middle">
-            <router-view  name="main"></router-view>
+            <div class="people" :class="{'open':open}" :style="{backgroundColor: login? 'black':'white', transition: 'all .5s'}" ref="peopleBlock">
+                <img class="people-logo" @click="toggleOpen" v-bind:src="ListUserLogo" :class="{'open':open}" v-if="login">
+                <ul class="people-list" :class="{'open':open}" :style="{marginTop: width}">
+                    JESUISTRESTRESTRESTRESTRESLONG
+                    <li v-for="user in $store.state.people">{{ user }}</li>
+                </ul>
+            </div>
+            <div class="chat-wrapper">
+                <router-view  name="main"></router-view>
+            </div>
+            <div class="deco" :class="{'blue': !login}">
+
+            </div>
         </div>
-        <div class="right-middle"></div>
         <div class="left-down"></div>
         <div class="middle-down"></div>
         <div class="right-down"></div>
@@ -30,47 +63,107 @@
 </template>
 
 <style lang="scss" scoped>
+    @import "theme/colors.scss";
     main {
         display: grid;
         grid-template-columns: calc(5% - 20px) auto calc(5% - 20px);
         grid-template-rows: calc(5vw - 20px) auto calc(5vw - 20px);
-        grid-template-areas:
-        "left-up middle-up right-up"
-        "left-middle middle right-middle"
-        "left-down middle-down right-down";
         grid-gap: 5px;
         background-color: black;
         width: 100vw;
         height: 100vh;
     }
+    .chat-wrapper {
+        position: relative;
+        width: calc(100% - 2*(5% - 15px));
+    }
+    .deco {
+        min-width: calc(5% - 20px);
+        border-left: solid 5px black;
+    }
     div {
         background-color: white;
     }
+    .people {
+        width: calc(5% - 20px);
+        border-right: solid 5px black;
+        min-width: 20px;
+        height: 100%;
+        color: white;
+        transition: all .5s;
+        position: relative;
+
+        &.open {
+            width: 20%;
+            min-width: 20%;
+            transition: all .5s;
+        }
+
+        &-logo {
+            position: absolute;
+            right: 0;
+            width: calc(5vw - 20px);
+            min-width: 20px;
+        }
+
+        &-list {
+            position: absolute;
+            transform: translateX(-100%);
+            transition: all .5s;
+            padding: 0 20px;
+            list-style-type: none;
+
+            &.open {
+                transform: translateX(0);
+                transition: all .5s;
+                overflow-y: scroll;
+            }
+        }
+    }
     .left-up {
-        grid-area: left-up;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
     }
     .right-up {
-        grid-area: right-up;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 1;
     }
     .left-down {
-        grid-area: left-down;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+        grid-row-end: 3;
     }
     .right-down {
-        grid-area: right-down;
-    }
-    .left-middle {
-        grid-area: left-middle;
-    }
-    .right-middle {
-        grid-area: right-middle;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 3;
     }
     .middle-down {
-        grid-area: middle-down;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 3;
     }
     .middle-up {
-        grid-area: middle-up;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
     }
     .middle {
-        grid-area: middle;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+    }
+    .blue {
+        background-color: $xindi-chat-blue;
     }
 </style>

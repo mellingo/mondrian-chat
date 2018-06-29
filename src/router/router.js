@@ -32,8 +32,8 @@ export default new Router({
                     if (to.meta.auth && !isNil(store.state.userLogin) && !isEmpty(store.state.userLogin)) {
                         return next();
                     }
-                    //next('login');
-                    return next();
+                    next('login');
+                    //return next();
                   }
                 },
                 {

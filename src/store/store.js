@@ -10,7 +10,8 @@ export default new Vuex.Store({
         messages: [],
         colors: [],
         positionParams: [],
-        rowNumber: 1
+        rowNumber: 1,
+        people: []
     },
     mutations: {
         updateUserLogin(state, value){
@@ -24,15 +25,25 @@ export default new Vuex.Store({
         },
         updatePositionParams(state, params){
             if (params.width + params.startPos > 6) {
+                console.log(params.width + params.startPos > 6);
                 state.positionParams[state.positionParams.length-1].width = 6 - state.positionParams[state.positionParams.length-1].startPos;
                 params = {width: params.width, startPos: 1};
                 state.rowNumber += 1;
             }
             params.rowNumber = state.rowNumber;
             state.positionParams.push(params);
+        },
+        updatePeople(state, userList){
+            state.people = userList;
+        },
+        messageSend(message){
+
         }
     },
     actions: {
-
+        sendMessage({commit, state}, message){
+            commit("messageSend");
+            commit("updateMessages", {username: state.userLogin, message})
+        }
     }
 });

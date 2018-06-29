@@ -30,8 +30,7 @@
         <div class="middle">
             <div class="middle_content">
                 <p>Bonjour</p>
-                <b>{{ userLogin }}</b>
-                <input type="text" placeholder="...tape ton nom ici" v-model="username">
+                <input type="text" placeholder="...tape ton nom ici" v-model="username" @keyup.enter="login">
             </div>
         </div>
         <div class="left-down"></div>
@@ -42,7 +41,7 @@
 </template>
 
 <style lang="scss" scoped>
-    @import "./../../theme/colors";
+    @import "theme/colors.scss";
 
     .login {
         display: grid;
@@ -103,6 +102,7 @@
                 font-size: 1em;
                 border: none;
                 padding-bottom: 10px;
+                width: 250px;
 
                 &:focus {
                     outline: 0;
