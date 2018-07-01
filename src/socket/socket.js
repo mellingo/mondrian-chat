@@ -3,7 +3,7 @@ const socket = io();
 import store from "./../store/store";
 
 socket.on('connect', () => {
-    console.log('connect');
+    store.commit('updateSocketId', socket.io.engine.id);
 });
 
 socket.on('user joined', (data) => {

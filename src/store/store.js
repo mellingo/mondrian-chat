@@ -11,9 +11,13 @@ export default new Vuex.Store({
         colors: [],
         positionParams: [],
         rowNumber: 1,
-        people: []
+        people: [],
+        socketId: ""
     },
     mutations: {
+        updateSocketId(state, value){
+            state.socketId = value;
+        },
         updateUserLogin(state, value){
             state.userLogin = value;
         },
@@ -41,7 +45,7 @@ export default new Vuex.Store({
     },
     actions: {
         sendMessage({commit, state}, message){
-            commit("messageSend");
+            commit("messageSend", message);
             commit("updateMessages", {username: state.userLogin, message})
         }
     }

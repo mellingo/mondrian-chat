@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 const server = app.listen(port, function() {
-    console.log('server running on port'+ port);
+    console.log('server running on port '+ port);
 });
 
 const io = require('socket.io')(server);
@@ -23,7 +23,7 @@ let userlist = [];
 io.on('connection', function(socket) {
 
     socket.on('add user', (username) => {
-        userlist.push(username);
+        userlist.push({username, id: socket.id});
         socket.username = username;
         socket.emit('login', {userlist});
         socket.broadcast.emit('user joined', {username, userlist})

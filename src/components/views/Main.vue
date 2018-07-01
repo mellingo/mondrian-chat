@@ -47,8 +47,7 @@
             <div class="people" :class="{'open':open}" :style="{backgroundColor: login? 'black':'white', transition: 'all .5s'}" ref="peopleBlock">
                 <img class="people-logo" @click="toggleOpen" v-bind:src="ListUserLogo" :class="{'open':open}" v-if="login">
                 <ul class="people-list" :class="{'open':open}" :style="{marginTop: width}">
-                    JESUISTRESTRESTRESTRESTRESLONG
-                    <li v-for="user in $store.state.people">{{ user }}</li>
+                    <li v-for="user in $store.state.people" v-if="user.id != $store.state.socketId">{{ user.username }}</li>
                 </ul>
             </div>
             <div class="chat-wrapper">
