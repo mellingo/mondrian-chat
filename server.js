@@ -20,7 +20,6 @@ const io = require('socket.io')(server);
 let userlist = [];
 
 io.on('connection', function(socket) {
-    console.log(socket.id);
 
     socket.on('add user', (username) => {
         userlist.push(username);

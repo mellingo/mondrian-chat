@@ -37,8 +37,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --config build/webpack.config.dev.js",
-    "build": "webpack --config build/webpack.config.dev.js",
-    "start-server": "yarn build && nodemon server.js"
+    "start": "webpack && node server.js",
+    "start-dev": "NODE_ENV=dev webpack && nodemon server.js"
+  },
+  "engines": {
+    "node": "v9.7.1"
   }
 }

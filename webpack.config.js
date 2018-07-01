@@ -5,16 +5,10 @@ const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
+const mode = process.env.NODE_ENV === "dev"? "development":"production";
 
 module.exports = {
-    mode: 'production',
-    devServer: {
-        hot: true,
-        watchOptions: {
-            poll: true
-        },
-        historyApiFallback: true,
-    },
+    mode: mode,
     module: {
         rules: [
             {
@@ -52,12 +46,11 @@ module.exports = {
     resolve: {
         alias: {
             "vue$": 'vue/dist/vue.esm.js',
-            "theme": path.resolve(__dirname, "../src/theme"),
-            "static": path.resolve(__dirname, "../src/static")
+            "theme": path.resolve(__dirname, "src/theme"),
+            "static": path.resolve(__dirname, "src/static")
         }
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
