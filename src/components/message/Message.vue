@@ -6,7 +6,12 @@
         props: ["message", "bgColor"]
     })
     export default class Message extends Vue {
-
+        mounted(){
+            this.$nextTick(function () {
+                let element = document.getElementById('messagesList');
+                element.scrollTop = element.scrollHeight
+            })
+        }
     }
 </script>
 

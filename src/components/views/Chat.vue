@@ -43,11 +43,11 @@
 
         generateParams(index, message){
             if (this.$store.state.positionParams.length < index+1) {
-                let width = Math.round(Math.random()*4+1);
+                let width = Math.round(Math.random()*3+1);
                 let startPos = 1;
                 if (index > 0){
                     startPos = this.$store.state.positionParams[index-1].startPos + this.$store.state.positionParams[index-1].width;
-                    if (width > 6 - startPos){
+                    if (width >= 6 - startPos && (5 - startPos)+1 > 0){
                         width = Math.round(Math.random()*(5 - startPos)+1);
                     }
                 }
@@ -71,7 +71,7 @@
 <template>
     <div class="chat">
         <div class="chat_content">
-            <div class="chat_messages">
+            <div class="chat_messages" id="messagesList">
                 <v-message v-for="(message, index) in messages" :message="message" :key="index"
                            :bgColor="randomColor(index)" :class="[{title: isTitle(message)}, randomColor(index)]" :style="generateParams(index, message)">
                 </v-message>
@@ -97,6 +97,7 @@
         &_messages {
             display: grid;
             position: absolute;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             width: 100%;
             max-height: 100%;
             overflow-y: scroll;
@@ -104,8 +105,9 @@
 
         &_content {
             width: 100%;
-            height: 100%;
-            max-height: 100%;
+            height: calc(100% - 50px);
+            max-height: calc(100% - 50px);
+            position: relative;
         }
 
         &_bottom {
