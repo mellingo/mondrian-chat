@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const history = require('connect-history-api-fallback');
+const port = process.env.PORT || 3000;
 
 app.use(history());
 
@@ -11,8 +12,8 @@ app.get("/", (req, res) => {
     res.render('dist/')
 });
 
-const server = app.listen(3000, function() {
-    console.log('server running on port 3000');
+const server = app.listen(port, function() {
+    console.log('server running on port'+ port);
 });
 
 const io = require('socket.io')(server);
