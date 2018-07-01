@@ -6,6 +6,10 @@ socket.on('connect', () => {
     store.commit('updateSocketId', socket.io.engine.id);
 });
 
+socket.on('login', (data) => {
+    store.commit("updatePeople", data.userlist);
+});
+
 socket.on('user joined', (data) => {
     store.commit("updatePeople", data.userlist);
 });
