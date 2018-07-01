@@ -13,7 +13,7 @@
         innerModel = null;
 
         mounted(){
-            console.log("hello");
+            this.$nextTick(() => this.$refs.input.focus());
         }
 
         get messages(){
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="chat_bottom">
-            <input class="chat_input" v-model="innerModel" type="text" placeholder="Tape ton message ici..." @keyup.enter="sendMessage"/>
+            <input class="chat_input" v-model="innerModel" type="text" placeholder="Tape ton message ici..." @keyup.enter="sendMessage" ref="input"/>
             <button class="chat_send" @click="sendMessage">Send</button>
         </div>
     </div>
