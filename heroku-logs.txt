@@ -1,0 +1,100 @@
+2018-07-01T10:57:56.533726+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=mondrian-chat.herokuapp.com request_id=99537ffa-6452-4769-aba6-e135704e243d fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T10:57:57.103483+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=mondrian-chat.herokuapp.com request_id=ce776503-9380-473c-8bab-c2aa131a91db fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T10:58:04.516054+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=mondrian-chat.herokuapp.com request_id=e9c794d3-ad68-4c5e-b2a8-32bf48324c14 fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T10:58:04.808158+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=mondrian-chat.herokuapp.com request_id=c645d97b-0ea9-4141-870f-3da4873a6111 fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:08:37.000000+00:00 app[api]: Build started by user ngomelanie@hotmail.fr
+2018-07-01T11:09:18.603749+00:00 heroku[web.1]: State changed from crashed to starting
+2018-07-01T11:09:21.803303+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-07-01T11:09:17.296372+00:00 app[api]: Deploy e7d8cb36 by user ngomelanie@hotmail.fr
+2018-07-01T11:09:17.296372+00:00 app[api]: Release v4 created by user ngomelanie@hotmail.fr
+2018-07-01T11:09:25.384598+00:00 heroku[web.1]: State changed from starting to crashed
+2018-07-01T11:09:25.386634+00:00 heroku[web.1]: State changed from crashed to starting
+2018-07-01T11:09:25.368137+00:00 heroku[web.1]: Process exited with status 1
+2018-07-01T11:09:25.229534+00:00 app[web.1]: 
+2018-07-01T11:09:25.229552+00:00 app[web.1]: > xindi-chat@1.0.0 start /app
+2018-07-01T11:09:25.229553+00:00 app[web.1]: > webpack && node server.js
+2018-07-01T11:09:25.229554+00:00 app[web.1]: 
+2018-07-01T11:09:25.243334+00:00 app[web.1]: sh: 1: webpack: not found
+2018-07-01T11:09:25.248443+00:00 app[web.1]: npm ERR! file sh
+2018-07-01T11:09:25.248805+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-07-01T11:09:25.249097+00:00 app[web.1]: npm ERR! errno ENOENT
+2018-07-01T11:09:25.249585+00:00 app[web.1]: npm ERR! syscall spawn
+2018-07-01T11:09:25.251893+00:00 app[web.1]: npm ERR! xindi-chat@1.0.0 start: `webpack && node server.js`
+2018-07-01T11:09:25.252130+00:00 app[web.1]: npm ERR! spawn ENOENT
+2018-07-01T11:09:25.252499+00:00 app[web.1]: npm ERR! 
+2018-07-01T11:09:25.252778+00:00 app[web.1]: npm ERR! Failed at the xindi-chat@1.0.0 start script.
+2018-07-01T11:09:25.253038+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-07-01T11:09:25.265016+00:00 app[web.1]: 
+2018-07-01T11:09:25.269428+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-07-01T11:09:25.269553+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-07-01T11_09_25_258Z-debug.log
+2018-07-01T11:09:21.000000+00:00 app[api]: Build succeeded
+2018-07-01T11:09:28.525720+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-07-01T11:09:31.583419+00:00 heroku[web.1]: Process exited with status 1
+2018-07-01T11:09:31.594652+00:00 heroku[web.1]: State changed from starting to crashed
+2018-07-01T11:09:31.462638+00:00 app[web.1]: 
+2018-07-01T11:09:31.462655+00:00 app[web.1]: > xindi-chat@1.0.0 start /app
+2018-07-01T11:09:31.462656+00:00 app[web.1]: > webpack && node server.js
+2018-07-01T11:09:31.462658+00:00 app[web.1]: 
+2018-07-01T11:09:31.470854+00:00 app[web.1]: sh: 1: webpack: not found
+2018-07-01T11:09:31.477843+00:00 app[web.1]: npm ERR! file sh
+2018-07-01T11:09:31.478188+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-07-01T11:09:31.478479+00:00 app[web.1]: npm ERR! errno ENOENT
+2018-07-01T11:09:31.478758+00:00 app[web.1]: npm ERR! syscall spawn
+2018-07-01T11:09:31.480356+00:00 app[web.1]: npm ERR! xindi-chat@1.0.0 start: `webpack && node server.js`
+2018-07-01T11:09:31.480554+00:00 app[web.1]: npm ERR! spawn ENOENT
+2018-07-01T11:09:31.480866+00:00 app[web.1]: npm ERR! 
+2018-07-01T11:09:31.481081+00:00 app[web.1]: npm ERR! Failed at the xindi-chat@1.0.0 start script.
+2018-07-01T11:09:31.481285+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-07-01T11:09:31.489558+00:00 app[web.1]: 
+2018-07-01T11:09:31.489845+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-07-01T11:09:31.490411+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-07-01T11_09_31_483Z-debug.log
+2018-07-01T11:09:39.844155+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=mondrian-chat.herokuapp.com request_id=70293b72-343e-484f-a41d-450467e6101b fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:09:40.294924+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=mondrian-chat.herokuapp.com request_id=882faf2c-0972-4172-aa51-7078cb700b07 fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:21:05.220983+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=mondrian-chat.herokuapp.com request_id=ddaf4bfc-ff42-4d01-b16e-8881b0bff379 fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:21:05.699561+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=mondrian-chat.herokuapp.com request_id=fcc36c33-2b24-46a5-bade-e895fdc8443c fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:26:10.263506+00:00 app[api]: Set NPM_CONFIG_PRODUCTION config vars by user ngomelanie@hotmail.fr
+2018-07-01T11:26:10.263506+00:00 app[api]: Release v5 created by user ngomelanie@hotmail.fr
+2018-07-01T11:26:11.836306+00:00 heroku[web.1]: State changed from crashed to starting
+2018-07-01T11:26:14.947920+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-07-01T11:26:18.261984+00:00 heroku[web.1]: Process exited with status 1
+2018-07-01T11:26:18.280169+00:00 heroku[web.1]: State changed from starting to crashed
+2018-07-01T11:26:18.281646+00:00 heroku[web.1]: State changed from crashed to starting
+2018-07-01T11:26:18.151838+00:00 app[web.1]: 
+2018-07-01T11:26:18.151852+00:00 app[web.1]: > xindi-chat@1.0.0 start /app
+2018-07-01T11:26:18.151853+00:00 app[web.1]: > webpack && node server.js
+2018-07-01T11:26:18.151854+00:00 app[web.1]: 
+2018-07-01T11:26:18.162066+00:00 app[web.1]: sh: 1: webpack: not found
+2018-07-01T11:26:18.165707+00:00 app[web.1]: npm ERR! file sh
+2018-07-01T11:26:18.166036+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-07-01T11:26:18.166307+00:00 app[web.1]: npm ERR! errno ENOENT
+2018-07-01T11:26:18.166574+00:00 app[web.1]: npm ERR! syscall spawn
+2018-07-01T11:26:18.168239+00:00 app[web.1]: npm ERR! xindi-chat@1.0.0 start: `webpack && node server.js`
+2018-07-01T11:26:18.168544+00:00 app[web.1]: npm ERR! spawn ENOENT
+2018-07-01T11:26:18.168892+00:00 app[web.1]: npm ERR! 
+2018-07-01T11:26:18.169100+00:00 app[web.1]: npm ERR! Failed at the xindi-chat@1.0.0 start script.
+2018-07-01T11:26:18.169297+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-07-01T11:26:18.181774+00:00 app[web.1]: 
+2018-07-01T11:26:18.182055+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-07-01T11:26:18.182230+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-07-01T11_26_18_171Z-debug.log
+2018-07-01T11:26:21.672740+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-07-01T11:26:24.906934+00:00 heroku[web.1]: State changed from starting to crashed
+2018-07-01T11:26:24.889799+00:00 heroku[web.1]: Process exited with status 1
+2018-07-01T11:26:24.765924+00:00 app[web.1]: 
+2018-07-01T11:26:24.765952+00:00 app[web.1]: > xindi-chat@1.0.0 start /app
+2018-07-01T11:26:24.765953+00:00 app[web.1]: > webpack && node server.js
+2018-07-01T11:26:24.765954+00:00 app[web.1]: 
+2018-07-01T11:26:24.781738+00:00 app[web.1]: sh: 1: webpack: not found
+2018-07-01T11:26:24.791200+00:00 app[web.1]: npm ERR! file sh
+2018-07-01T11:26:24.791531+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-07-01T11:26:24.792252+00:00 app[web.1]: npm ERR! errno ENOENT
+2018-07-01T11:26:24.792542+00:00 app[web.1]: npm ERR! syscall spawn
+2018-07-01T11:26:24.793983+00:00 app[web.1]: npm ERR! xindi-chat@1.0.0 start: `webpack && node server.js`
+2018-07-01T11:26:24.794142+00:00 app[web.1]: npm ERR! spawn ENOENT
+2018-07-01T11:26:24.794472+00:00 app[web.1]: npm ERR! 
+2018-07-01T11:26:24.794649+00:00 app[web.1]: npm ERR! Failed at the xindi-chat@1.0.0 start script.
+2018-07-01T11:26:24.794809+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-07-01T11:26:24.801428+00:00 app[web.1]: 
+2018-07-01T11:26:24.801691+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-07-01T11:26:24.801904+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-07-01T11_26_24_796Z-debug.log
+2018-07-01T11:27:24.779893+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=mondrian-chat.herokuapp.com request_id=d198a945-9e8b-4de9-9253-2481dcd8096c fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
+2018-07-01T11:27:25.325667+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=mondrian-chat.herokuapp.com request_id=0500a017-b363-4616-9ef5-eb553a9d4330 fwd="89.156.6.50" dyno= connect= service= status=503 bytes= protocol=https
